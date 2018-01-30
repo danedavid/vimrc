@@ -1,9 +1,6 @@
 " Pathogen
 execute pathogen#infect()
 
-" Double i to exit Insert mode
-inoremap ii <Esc>
-
 " Indentation
 set expandtab
 set shiftwidth=2
@@ -32,4 +29,6 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <leader>q :q!<CR>
 nmap <leader>x :x<CR>
+" Double i to exit Insert mode
+inoremap ii <Esc>
 

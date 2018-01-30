@@ -29,6 +29,13 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <leader>q :q!<CR>
 nmap <leader>x :x<CR>
-" Double i to exit Insert mode
 inoremap ii <Esc>
 
+" GitGutter
+let g:gitgutter_map_keys=0
+let g:gitgutter_realtime=0
+
+" Misc
+set number
+set updatetime=250
+set nofixendofline

@@ -21,6 +21,9 @@ let g:lightline = {
 " Filetype Plugins
 filetype plugin indent on
 
+" Auto-commands
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Color Scheme
 colorscheme onedark
 
@@ -30,12 +33,20 @@ nmap <leader>w :w<CR>
 nmap <leader>q :q!<CR>
 nmap <leader>x :x<CR>
 inoremap ii <Esc>
+inoremap <C-[> <Del>
+nnoremap ]] /}<CR>
+nnoremap ff vey/<C-r>"<CR>
 
 " GitGutter
 let g:gitgutter_map_keys=0
 let g:gitgutter_realtime=0
 
+" close-tags
+let g:closetag_filenames='*.jsx,*.xhtml,*.js'
+
 " Misc
 set number
 set updatetime=250
 set nofixendofline
+set incsearch
+set cul

@@ -16,7 +16,16 @@ let g:jsx_ext_required=0
 set laststatus=2
 let g:lightline = {
   \ 'colorscheme': 'onedark',
-  \ }
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['gitbranch', 'readonly', 'filename', 'modified']
+  \   ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head'
+  \ }, 
+  \}
 
 " Filetype Plugins
 filetype plugin indent on
@@ -37,6 +46,7 @@ inoremap <C-[> <Del>
 nnoremap ]] /}<CR>
 nnoremap ff vey/<C-r>"<CR>
 nnoremap Y "+y
+nnoremap gd :Gdiff<CR>
 
 " GitGutter
 let g:gitgutter_map_keys=0

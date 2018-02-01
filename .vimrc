@@ -47,12 +47,27 @@ nnoremap ]] /}<CR>
 nnoremap ff vey/<C-r>"<CR>
 nnoremap Y "+y
 nnoremap gd :Gdiff<CR>
+nnoremap U <C-r>
+nnoremap <tab> gt
+nnoremap 9j 20j
+nnoremap 9k 20k
 
 " GitGutter
 let g:gitgutter_map_keys=0
 
 " close-tags
 let g:closetag_filenames='*.jsx,*.xhtml,*.js'
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules, .git',
+  \ 'file': '*.swp'
+  \}
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("t")': ['<CR>'],
+  \ 'AcceptSelection("e")': ['<C-t>']
+  \}
 
 " Misc
 set number

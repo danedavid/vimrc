@@ -40,14 +40,13 @@ nnoremap Y "+y
 
 " GitGutter
 let g:gitgutter_map_keys=0
-let g:gitgutter_realtime=0
 
 " close-tags
 let g:closetag_filenames='*.jsx,*.xhtml,*.js'
 
 " Misc
 set number
-set updatetime=250
+set updatetime=500
 set nofixendofline
 set incsearch
 set cul

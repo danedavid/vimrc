@@ -36,6 +36,7 @@ inoremap ii <Esc>
 inoremap <C-[> <Del>
 nnoremap ]] /}<CR>
 nnoremap ff vey/<C-r>"<CR>
+nnoremap Y "+y
 
 " GitGutter
 let g:gitgutter_map_keys=0

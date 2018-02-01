@@ -4,3 +4,7 @@
 
 1. `git clone <repo> .vim`
 2. `echo "runtime .vimrc" > ~/.vimrc 
+
+## Additional things to do:
+
+1. `sudo apt install vim-gtk`

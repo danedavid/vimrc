@@ -75,3 +75,5 @@ set updatetime=500 "Reduced updatetime to show realtime git diff
 set nofixendofline "Do not add new line at end of file
 set incsearch "Incremental Search
 set cul "Highlight current line
+set lines=50 columns=900 "Set vim to max size
+set pastetoggle=<F2> "toggle paste mode with F2

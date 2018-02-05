@@ -46,7 +46,6 @@ inoremap <C-[> <Del>
 nnoremap ]] /}<CR>
 nnoremap ff vey/<C-r>"<CR>
 nnoremap Y "+y
-nnoremap gd :Gdiff<CR>
 nnoremap U <C-r>
 nnoremap <tab> gt
 nnoremap 9j 20j
@@ -55,8 +54,11 @@ nnoremap 9k 20k
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter
 
+" Vim Fugitive
+nnoremap gd :Gdiff<CR>
+
 " close-tags
-let g:closetag_filenames='*.jsx,*.xhtml,*.js' "Files for which automatic close tags required
+let g:closetag_filenames='*.jsx,*.xhtml,*.js, *.html' "Files for which automatic close tags required
 
 " CtrlP
 let g:ctrlp_show_hidden = 1 "Show hidden files in CtrlP menu
@@ -76,4 +78,8 @@ set nofixendofline "Do not add new line at end of file
 set incsearch "Incremental Search
 set cul "Highlight current line
 set lines=50 columns=900 "Set vim to max size
-set pastetoggle=<F2> "toggle paste mode with F2
+
+" NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1

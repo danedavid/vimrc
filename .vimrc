@@ -5,6 +5,7 @@ execute pathogen#infect()
 set expandtab "Use soft tabs (spaces)
 set shiftwidth=2 "Set tab width = 2
 set softtabstop=2 "Set tab width = 2
+set autoindent "Set indent of previous line
 
 " Syntax Highlighting
 syntax on
@@ -50,6 +51,7 @@ nnoremap U <C-r>
 nnoremap <tab> gt
 nnoremap 9j 20j
 nnoremap 9k 20k
+nnoremap ; A;<Esc>
 
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter
@@ -62,6 +64,7 @@ let g:closetag_filenames='*.jsx,*.xhtml,*.js, *.html' "Files for which automatic
 
 " CtrlP
 let g:ctrlp_show_hidden = 1 "Show hidden files in CtrlP menu
+let g:ctrlp_open_new_file = 't' "Open new files in new tab
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules, .git',
   \ 'file': '*.swp'
@@ -78,6 +81,8 @@ set nofixendofline "Do not add new line at end of file
 set incsearch "Incremental Search
 set cul "Highlight current line
 set lines=50 columns=900 "Set vim to max size
+set noswapfile "No swap file created
+set modifiable "NERDTree can modify the tree
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

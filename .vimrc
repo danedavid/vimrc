@@ -67,7 +67,6 @@ let g:ctrlp_show_hidden = 1 "Show hidden files in CtrlP menu
 let g:ctrlp_open_new_file = 't' "Open new files in new tab
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules, .git',
-  \ 'file': '*.swp'
   \} "Files to skip in CtrlP menu
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("t")': ['<CR>'],
@@ -83,6 +82,7 @@ set cul "Highlight current line
 set lines=50 columns=900 "Set vim to max size
 set noswapfile "No swap file created
 set modifiable "NERDTree can modify the tree
+set wildignore+=*/.git/*,*/node_modules
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

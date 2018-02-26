@@ -52,12 +52,12 @@ nnoremap <tab> gt
 nnoremap 9j 20j
 nnoremap 9k 20k
 nnoremap ; A;<Esc>
+nnoremap D "_d
+nnoremap gd :Gdiff<CR>
+nnoremap gs :Gstatus<CR>
 
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter
-
-" Vim Fugitive
-nnoremap gd :Gdiff<CR>
 
 " close-tags
 let g:closetag_filenames='*.jsx,*.xhtml,*.js, *.html' "Files for which automatic close tags required

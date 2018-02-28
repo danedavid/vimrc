@@ -55,6 +55,7 @@ nnoremap D "_d
 nnoremap gd :Gdiff<CR>
 nnoremap gs :Gstatus<CR>
 nnoremap <leader>a :Ack!<Space>
+nnoremap <leader>v :tabnew ~/.vim/.vimrc<CR>
 
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter

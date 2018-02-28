@@ -8,3 +8,4 @@
 ## Additional things to do:
 
 1. `sudo apt install vim-gtk`
+1. `sudo apt install ack-grep`

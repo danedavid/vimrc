@@ -45,7 +45,6 @@ nmap <leader>x :x<CR>
 inoremap ii <Esc>
 inoremap <C-[> <Del>
 nnoremap ]] /}<CR>
-nnoremap ff vey/<C-r>"<CR>
 nnoremap Y "+y
 nnoremap U <C-r>
 nnoremap <tab> gt

@@ -40,7 +40,7 @@ colorscheme onedark "Atom's colorscheme
 " Mappings
 let mapleader=","
 nmap <leader>w :w<CR>
-nmap <leader>q :q!<CR>
+nmap <leader>q :q<CR>
 nmap <leader>x :x<CR>
 inoremap ii <Esc>
 inoremap <C-[> <Del>
@@ -84,6 +84,9 @@ set lines=50 columns=900 "Set vim to max size
 set noswapfile "No swap file created
 set modifiable "NERDTree can modify the tree
 set wildignore+=*/.git/*,*/node_modules
+set colorcolumn=78 "Maximum length
+set ignorecase "Ignore case while searching
+set smartcase "Ignore case only if all are lowercase characters
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

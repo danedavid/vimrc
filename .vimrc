@@ -53,21 +53,26 @@ colorscheme onedark "Atom's colorscheme
 let mapleader=","
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+nmap <leader>Q :q!<CR>
 nmap <leader>x :x<CR>
 inoremap ii <Esc>
 inoremap <C-[> <Del>
 nnoremap ]] /}<CR>
 nnoremap Y "+y
+vnoremap Y "+y
 nnoremap U <C-r>
 nnoremap <tab> gt
 nnoremap 9j 20j
 nnoremap 9k 20k
 nnoremap ; A;<Esc>
 nnoremap D "_d
+vnoremap D "_d
 nnoremap gd :Gdiff<CR>
 nnoremap gs :Gstatus<CR>
 nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>v :tabnew ~/.vim/.vimrc<CR>
+nnoremap <leader>m <C-w>w
+nnoremap <leader>p "+p
 
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter

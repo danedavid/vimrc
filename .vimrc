@@ -28,6 +28,18 @@ let g:lightline = {
   \ }, 
   \} "Config for lightline
 
+" Tab line
+let g:lightline.tab_component_function = {
+      \ 'custom_tabname': 'CustomTabname',
+      \ 'modified': 'lightline#tab#modified',
+      \ 'readonly': 'lightline#tab#readonly',
+      \ 'tabnum': 'lightline#tab#tabnum'
+      \ }
+
+let g:lightline.tab = {
+      \ 'active': [ 'tabnum', 'custom_tabname', 'modified' ],
+      \ 'inactive': [ 'tabnum', 'custom_tabname', 'modified' ] }
+
 " Filetype Plugins
 filetype plugin indent on "Use Plugins and Indentation based on FileType
 
@@ -92,3 +104,27 @@ set smartcase "Ignore case only if all are lowercase characters
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" Custom functions
+function! CustomTabname(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let bufnum = buflist[winnr - 1]
+  let bufname = expand('#'.bufnum.':t')
+  let buffullname = expand('#'.bufnum.':p')
+  let buffullnames = []
+  let bufnames = []
+  for i in range(1, tabpagenr('$'))
+    if i != a:n
+      let num = tabpagebuflist(i)[tabpagewinnr(i) - 1]
+      call add(buffullnames, expand('#' . num . ':p'))
+      call add(bufnames, expand('#' . num . ':t'))
+    endif
+  endfor
+  let i = index(bufnames, bufname)
+  if strlen(bufname) && i >= 0 && buffullnames[i] != buffullname
+    return substitute(buffullname, '.*/\([^/]\+/\)', '\1', '')
+  else
+    return strlen(bufname) ? bufname : '[No Name]'
+  endif
+endfunction

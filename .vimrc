@@ -104,6 +104,7 @@ set wildignore+=*/.git/*,*/node_modules
 set colorcolumn=78 "Maximum length
 set ignorecase "Ignore case while searching
 set smartcase "Ignore case only if all are lowercase characters
+set diffopt+=vertical "Show git diff in vertical split
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

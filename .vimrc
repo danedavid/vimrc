@@ -73,6 +73,7 @@ nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>v :tabnew ~/.vim/.vimrc<CR>
 nnoremap <leader>m <C-w>w
 nnoremap <leader>p "+p
+nnoremap gf <C-w>gf
 
 " GitGutter
 let g:gitgutter_map_keys=0 "Remove all keymaps by vim-gitgutter

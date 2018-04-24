@@ -109,7 +109,7 @@ set diffopt+=vertical "Show git diff in vertical split
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :call MapKeyN()<CR>
 let NERDTreeShowHidden=1
 
 " Custom functions
@@ -133,5 +133,17 @@ function! CustomTabname(n)
     return substitute(buffullname, '.*/\([^/]\+/\)', '\1', '')
   else
     return strlen(bufname) ? bufname : '[No Name]'
+  endif
+endfunction
+
+function! IsNerdTreeEnabled()
+  return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+endfunction
+
+function! MapKeyN()
+  if IsNerdTreeEnabled()
+    execute "NERDTreeToggle"
+  else
+    execute "NERDTreeFind"
   endif
 endfunction

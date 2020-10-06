@@ -16,7 +16,6 @@ let g:jsx_ext_required=0 "Use JSX syntax for .js files
 " Status Line - lightline
 set laststatus=2 "Show Status Line
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
@@ -45,9 +44,6 @@ filetype plugin indent on "Use Plugins and Indentation based on FileType
 
 " Auto-commands
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "Disable automatic comment insertion
-
-" Color Scheme
-colorscheme onedark "Atom's colorscheme
 
 " Mappings
 let mapleader=","
@@ -98,14 +94,15 @@ set updatetime=500 "Reduced updatetime to show realtime git diff
 set nofixendofline "Do not add new line at end of file
 set incsearch "Incremental Search
 set cul "Highlight current line
-set lines=50 columns=900 "Set vim to max size
 set noswapfile "No swap file created
 set modifiable "NERDTree can modify the tree
 set wildignore+=*/.git/*,*/node_modules
-set colorcolumn=78 "Maximum length
 set ignorecase "Ignore case while searching
 set smartcase "Ignore case only if all are lowercase characters
-set diffopt+=vertical "Show git diff in vertical split
+if &diff
+    set diffopt-=internal
+    set diffopt+=vertical
+endif
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

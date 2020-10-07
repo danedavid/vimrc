@@ -44,7 +44,10 @@ filetype plugin indent on "Use Plugins and Indentation based on FileType
 
 " Auto-commands
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "Disable automatic comment insertion
-autocmd vimenter * colorscheme gruvbox
+
+" Gruvbox Theme
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 let g:gruvbox_termcolors=16
 
 " Mappings

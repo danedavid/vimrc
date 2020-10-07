@@ -80,8 +80,10 @@ let g:closetag_filenames='*.jsx,*.xhtml,*.js, *.html' "Files for which automatic
 " CtrlP
 let g:ctrlp_show_hidden = 1 "Show hidden files in CtrlP menu
 let g:ctrlp_open_new_file = 't' "Open new files in new tab
+let g:ctrlp_max_files = 0 " No limit for max files
 let g:ctrlp_custom_ignore = {
-  \ 'dir': 'node_modules, .git',
+  \ 'dir': '\v[\/](node_modules|.git|tmp)[\/]',
+  \ 'file': '\v\.(exe|so|dll|mp3|svg|jpg|png|chunk\.js|gz|br|map|bundle\.js|cache)$',
   \} "Files to skip in CtrlP menu
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("t")': ['<CR>'],

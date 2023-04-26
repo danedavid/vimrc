@@ -91,8 +91,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|mp3|svg|jpg|png|chunk\.js|gz|br|map|bundle\.js|cache)$',
   \} "Files to skip in CtrlP menu
 let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("t")': ['<CR>'],
-  \ 'AcceptSelection("e")': ['<C-t>']
+  \ 'AcceptSelection("t")': ['<C-j>'],
+  \ 'AcceptSelection("e")': ['<CR>']
   \} "Remap keys to default open in new tab
 
 " Misc
